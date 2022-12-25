@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { HiOutlineShoppingBag, HiXMark } from "react-icons/hi2";
 
-function ShoppingCart({ onClick, isOpen }) {
+function ShoppingCart({
+  onClick,
+  isOpen,
+}: {
+  onClick: () => void;
+  isOpen: boolean;
+}) {
   return (
     <>
       <button onClick={onClick}>
