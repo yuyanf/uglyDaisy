@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { HiOutlineShoppingBag, HiXMark } from "react-icons/hi2";
+import { HiXMark } from "react-icons/hi2";
+import CartIcon from "./icons/CartIcon";
 
 function ShoppingCart({
   onClick,
@@ -12,7 +13,7 @@ function ShoppingCart({
   return (
     <>
       <button onClick={onClick}>
-        <HiOutlineShoppingBag className="text-2xl" />
+        <CartIcon className="w-6 h-6" />
       </button>
 
       <div
@@ -23,6 +24,7 @@ function ShoppingCart({
         <button onClick={onClick} className="absolute right-2 top-2">
           <HiXMark className="text-3xl" />
         </button>
+        <ul></ul>
         <Link
           href="/checkout"
           onClick={onClick}

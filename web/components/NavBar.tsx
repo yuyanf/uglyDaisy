@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { GiDaisy } from "react-icons/gi";
 import BackDrop from "./BackDrop";
+import UserIcon from "./icons/UserIcon";
+import WishIcon from "./icons/WishIcon";
 import ShoppingCart from "./ShoppingCart";
-import UserAccount from "./UserAccount";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,19 +13,21 @@ const NavBar = () => {
   };
   return (
     <>
-      <nav className="flex bg-white shadow-lg justify-between py-2 px-3">
-        <GiDaisy className="text-2xl" />
-        <ul className="flex gap-3">
-          <li>
-            <UserAccount></UserAccount>
+      <nav className="flex bg-white shadow-lg justify-between py-3 px-4">
+        <div className="text-xl font-roboto font-bold">UGLY DAISY</div>
+        <ul className="flex gap-6">
+          <li className="flex items-center">
+            <UserIcon className="w-6 h-6" />
           </li>
-          <li> wishList </li>
-          <li>
+          <li className="flex items-center">
+            <WishIcon className="w-6 h-6" />
+          </li>
+          <li className="flex items-center">
             <ShoppingCart onClick={handleClick} isOpen={isOpen}></ShoppingCart>
           </li>
         </ul>
       </nav>
-      {isOpen && <BackDrop />}
+      {isOpen && <BackDrop onClick={handleClick} />}
     </>
   );
 };
